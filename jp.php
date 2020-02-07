@@ -123,7 +123,7 @@ foreach ($sheet_full as $i => $row) {
 
 /* запись в новый файл */
 
-include_once "./PHP_XLSXWriter/vendor/autoload.php";
+include_once "./PHP_XLSXWriter/xlsxwriter.class.php";
 
 $writer = new XLSXWriter();
 $writer->writeSheet($newSheet);
