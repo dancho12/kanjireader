@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400&display=swap&subset=japanese');
+  .main{
+	font-family: 'Noto Sans JP', sans-serif;
+	width: 185mm;
+	/* height: 297mm; */
+	margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+h1{
+	font-family: 'Noto Sans JP', sans-serif;
+	
+}
+
+.space{
+	width: 185mm;
+	height: 14mm;
+	float: left;
+}
+
+.kanji {
+	/* height: 150px; */
+    width: 15mm;
+    /* height: 14mm; */
+	text-align: center;
+	margin-left: auto;
+margin-right: auto;
+	padding: 0%;
+    border: solid 0.5px grey;
+
+	float: left;
+	margin-bottom: 0px;
+
+}
+
+.kanji h1 {
+	margin: 0px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 1.1em;
+    font-weight: 300;
+    height: 7mm;
+    border:0px;
+}
+
+.kanji h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0px;
+    height: 5mm;
+	font-size: 0.4em;
+	/* color: #3f3c3c; */
+    font-weight: 300;
+    border:0px;
+
+}
