@@ -123,11 +123,11 @@ foreach ($sheet_full as $i => $row) {
 
 /* запись в новый файл */
 
-include_once "./PHP_XLSXWriter/vendor/autoload.php";
+// include_once "./PHP_XLSXWriter/vendor/autoload.php";
 
-$writer = new XLSXWriter();
-$writer->writeSheet($newSheet);
-$writer->writeToFile('Kanji_N4_edit.xlsx');
+// $writer = new XLSXWriter();
+// $writer->writeSheet($newSheet);
+// $writer->writeToFile('Kanji_N4_edit.xlsx');
 
 $cb = $_POST['CB'];
 //var_dump($cb);
