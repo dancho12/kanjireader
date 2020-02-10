@@ -40,49 +40,49 @@ foreach ($sheet as $i => $row) {
 
         $stl;
 
-        if ($i == 0) {
-            $stl = ' border-left: solid 1px grey;
-        border-top: solid 1px grey;/*1*/';
-        } elseif ($i > 0 && $i < 11) {
-            $stl = 'border-top: solid 1px grey;/*2*/';
-        } elseif ($i == 11) {
-            $stl = ' border-right: solid 1px grey;
-        border-top: solid 1px grey;/*3*/';
-        } elseif ($i == $left_side) {
-            $stl = ' border-left: solid 1px grey;/*4*/';
-            if ($left_side < $last_row - 24) {
-                $left_side = $left_side + 12;
-            }
-        } elseif ($i == $right_side) {
-            $stl = ' border-right: solid 1px grey;/*5*/';
-            if ($right_side < $last_row - 13) {
-                $right_side = $right_side + 12;
-            }
-        } elseif ($i > $last_row - 12 && $i < $last_row - 1) {
-            $stl = 'border-bottom: solid 1px grey;/*6*/';
-        } elseif ($i > $last_row && $i < $full - 1) {
-            $stl = 'border-top: solid 0px grey;
-        border-bottom: solid 1px grey;/*7*/';
-        } elseif ($i == $last_row - 12) {
-            $stl = 'border-bottom: solid 1px grey;
-        border-left: solid 1px grey;/*8*/';
-        } elseif ($i == $last_row - 1) {
-            $stl = 'border-bottom: solid 1px grey;
-        border-right: solid 1px grey;/*9*/';
-        } elseif ($i == $last_row) {
-            $stl = 'border-top: solid 0px grey;
-        border-bottom: solid 1px grey;
-        border-left: solid 1px grey;/*10*/';
-        } elseif ($i == $full - 1) {
-            $stl = 'border-top: solid 0px grey;
-        border-bottom: solid 1px grey;
-        border-right: solid 1px grey;/*11*/';
-        }
+        // if ($i == 0) {
+        //     $stl = ' border-left: solid 1px grey;
+        // border-top: solid 1px grey;/*1*/';
+        // } elseif ($i > 0 && $i < 11) {
+        //     $stl = 'border-top: solid 1px grey;/*2*/';
+        // } elseif ($i == 11) {
+        //     $stl = ' border-right: solid 1px grey;
+        // border-top: solid 1px grey;/*3*/';
+        // } elseif ($i == $left_side) {
+        //     $stl = ' border-left: solid 1px grey;/*4*/';
+        //     if ($left_side < $last_row - 24) {
+        //         $left_side = $left_side + 12;
+        //     }
+        // } elseif ($i == $right_side) {
+        //     $stl = ' border-right: solid 1px grey;/*5*/';
+        //     if ($right_side < $last_row - 13) {
+        //         $right_side = $right_side + 12;
+        //     }
+        // } elseif ($i > $last_row - 12 && $i < $last_row - 1) {
+        //     $stl = 'border-bottom: solid 1px grey;/*6*/';
+        // } elseif ($i > $last_row && $i < $full - 1) {
+        //     $stl = 'border-top: solid 0px grey;
+        // border-bottom: solid 1px grey;/*7*/';
+        // } elseif ($i == $last_row - 12) {
+        //     $stl = 'border-bottom: solid 1px grey;
+        // border-left: solid 1px grey;/*8*/';
+        // } elseif ($i == $last_row - 1) {
+        //     $stl = 'border-bottom: solid 1px grey;
+        // border-right: solid 1px grey;/*9*/';
+        // } elseif ($i == $last_row) {
+        //     $stl = 'border-top: solid 0px grey;
+        // border-bottom: solid 1px grey;
+        // border-left: solid 1px grey;/*10*/';
+        // } elseif ($i == $full - 1) {
+        //     $stl = 'border-top: solid 0px grey;
+        // border-bottom: solid 1px grey;
+        // border-right: solid 1px grey;/*11*/';
+        // }
 
         ?>
         <div class="kanji" style="<?php echo $stl;
         $stl = ""; ?>">
-            <h2 style="height: 2mm;">
+            <h2 style="height: 4mm;">
                 <?php echo $row[1]; ?>
             </h2>
             <h1>
@@ -98,7 +98,19 @@ $h_str = $row[2];
         </div>
         <?php
 
+$row_h++;
+    if ($row_h == 10) {
+        $row_val++;
+        $row_h = 0;
     }
+    if ($row_val == 9 && $row_h == 0) {
+
+        ?>
+    <div class="space"></div>
+    <?php
+
+    }
+}
 
 ?>
     <p style = "margin-top: 4mm;
