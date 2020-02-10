@@ -24,8 +24,8 @@
 
 <body>
     <div class="row">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4 form-group">
+        <div class="col-lg-5"></div>
+        <div class="col-lg-2 form-group">
             <form enctype="multipart/form-data" action="jp.php" method="POST">
                 <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
                 <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
@@ -39,7 +39,7 @@
             <p>Загрузиться страница с таблицей. Для создания pdf файла надо(в Google Chrome): Правая кнопка мыши→«Печать...» → «Сохранить как pdf».</p>
         </div>
 
-        <div class="col-lg-4"></div>
+        <div class="col-lg-5"></div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

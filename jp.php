@@ -128,13 +128,13 @@ include_once "./xlsxwriter.class.php";
 $writer = new XLSXWriter();
 $writer->writeSheet($newSheet);
 $writer->writeToFile('Kanji_N4_edit.xlsx');
-
-$cb = $_POST['CB'];
-//var_dump($cb);
-if($cb == "on"){
-    include 'test_t.php';
-}else{
-    include 'test.php';
-}
+include 'table.php';
+// $cb = $_POST['CB'];
+// //var_dump($cb);
+// if($cb == "on"){
+//     include 'test_t.php';
+// }else{
+//     include 'test.php';
+// }
 
 
