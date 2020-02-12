@@ -19,6 +19,14 @@ h1{
 	height: 25mm;
 	float: left;
 }
+.page{
+	width: 195mm;
+	height: 260mm;
+	margin-bottom: 26mm;
+	/* float: left; */
+}
+
+
 
 .kanji {
 	/* height: 150px; */

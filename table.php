@@ -13,7 +13,7 @@
 <body>
 
     <div class="main">
-        <h1>JLPT N4</h1>
+        <!-- <h1>JLPT N4</h1> -->
 
 
         <?php
@@ -33,11 +33,20 @@ $left_side = 12;
 $right_side = 23;
 $row_val = 0;
 $row_h = 0;
+
+$first_page =true;
+$page=true;
 foreach ($sheet as $i => $row) {
 //   foreach($row as $i=>$val){
     //       echo $val." ";
     //   }
-
+if($page){
+    ?><div class="page"> <?php
+    $page = false;
+    if($i==0){
+        ?> <h1>JLPT N4</h1><?php  
+    }
+}
         $stl;
 
         // if ($i == 0) {
@@ -103,12 +112,23 @@ $row_h++;
         $row_val++;
         $row_h = 0;
     }
-    if ($row_val == 9 && $row_h == 0) {
+    if ($row_val == 9 && $row_h == 0&&$first_page==true) {
 
         ?>
-    <div class="space"></div>
+    <!-- <div class="space"> -->
+    </div>
     <?php
+$row_val=0;
+$page = true;
+$first_page=false;
+    }elseif ($row_val == 10 && $row_h == 0&&$first_page==false) {
 
+        ?>
+    <!-- <div class="space"> -->
+    </div>
+    <?php
+$row_val=0;
+$page = true;
     }
 }
 
