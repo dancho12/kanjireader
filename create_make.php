@@ -26,15 +26,15 @@
     <div class="row">
         <div class="col-lg-5"></div>
         <div class="col-lg-2 form-group">
-            <form enctype="multipart/form-data" action="jp.php" method="POST">
+            <form enctype="multipart/form-data" action="jp_make.php" method="POST">
                 <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
                 <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                 <!-- Название элемента input определяет имя в массиве $_FILES -->
 
                 <!-- <input type="checkbox" name = "CB">С переводом<br> -->
-                
+
                 <h2>Генератор таблиц JLPT</h2>
-                <a href="Kanji_N4.xlsx" download>Пример файла</a><br><a href="table.php">Пример таблицы</a>
+                <a href="Kanji_N4.xlsx" download>Пример файла</a>
                 <h3>Загрузите файл .xlsx: </h3><input name="userfile" type="file" /><br>
                 <input name = "title" type="text" class="form-control" placeholder="Название таблицы"><br>
                 <input class="btn btn-primary" type="submit" value="Создать таблицу" />

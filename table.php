@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>JLPT</title>
-    <meta name="description" content="JLPT N4">
+    <meta name="description" content="JLPT">
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -18,19 +18,19 @@
 
         <?php
 
-
-if(isset($newSheet)){
+if (!empty($newSheet)) {
     $sheet = $newSheet;
-}else{
+
+} else {
     require_once __DIR__ . '/simple-xlsx/simplexlsx.class.php';
     // Файл xlsx
-$xlsx = new SimpleXLSX(__DIR__ . '/GKanji_N4_edit.xlsx');
+    $xlsx = new SimpleXLSX(__DIR__ . '/Kanji_N4_edit.xlsx');
 //$xlsx = new SimpleXLSX($_FILES['userfile']['tmp_name']);
 
 // Первый лист
-$sheet = $xlsx->rows();
-}
+    $sheet = $xlsx->rows();
 
+}
 
 $full = count($sheet);
 $last_row = (intval($full / 12) * 12);
@@ -38,18 +38,18 @@ $left_side = 12;
 $right_side = 23;
 $row_val = 0;
 $row_h = 0;
-if(isset($_POST['title'])){
-   $N =  $_POST['title'];
-}else{
+if (isset($_POST['title'])) {
+    $N = $_POST['title'];
+} else {
     $N = count($sheet);
-    if($N > 0&&$N<150){
+    if ($N > 0 && $N < 150) {
         $N = 5;
-    }elseif($N > 150&&$N<200){
+    } elseif ($N > 150 && $N < 200) {
         $N = 4;
-    }elseif($N > 200&&$N<400){
+    } elseif ($N > 200 && $N < 400) {
         $N = 3;
     }
-    $N = "JLPT N".$N;
+    $N = "JLPT N" . $N;
 }
 
 $first_page = true;
@@ -62,8 +62,8 @@ foreach ($sheet as $i => $row) {
         ?><div class="page"> <?php
 $page = false;
         if ($i == 0) {
-            
-            ?> <h1><?php echo $N?></h1><?php
+
+            ?> <h1><?php echo $N ?></h1><?php
 }
     }
     $stl;
@@ -118,20 +118,19 @@ $page = false;
             </h1>
             <h2 ><?php
 $h_str = $row[2];
-  $h_str = str_replace(" ", "", $h_str);
+    $h_str = str_replace(" ", "", $h_str);
 /*эксперементы*/
-if (strlen($h_str) > 22) {
-    $l = strpos($h_str, "、");
-    $mas_pos = $l;
-    if(strlen(substr($h_str,$l+3))>22){
-        $l = strpos($h_str, "、",$l+4);
-        $h_str = substr_replace($h_str, "<br>", $l + 3, 0);
+    if (strlen($h_str) > 22) {
+        $l = strpos($h_str, "、");
+        $mas_pos = $l;
+        if (strlen(substr($h_str, $l + 3)) > 22) {
+            $l = strpos($h_str, "、", $l + 4);
+            $h_str = substr_replace($h_str, "<br>", $l + 3, 0);
+        }
+        $h_str = substr_replace($h_str, "<br>", $mas_pos + 3, 0);
     }
-    $h_str = substr_replace($h_str, "<br>", $mas_pos + 3, 0);
-}
 /*эксперементы*/
 
-  
     $h_str = str_replace("%", '<span style="text-decoration: underline; ">', $h_str);
     $h_str = str_replace("&", '</span>', $h_str);
     echo $h_str;?></h2>

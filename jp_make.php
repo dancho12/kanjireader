@@ -122,7 +122,7 @@ foreach ($sheet_full as $i => $row) {
         $h_str = str_replace("・", "、", $h_str);
         $f_str_l = strlen($row_clone); //длина полной строки
         $k_str_l = ($f_str_l - $h_str_l2); //длина строки катаканы
-        $k_str = substr($row_clone, 0, $k_str_l - 3); //строка катаканы
+        $k_str = substr($row_clone, 0, $k_str_l-3); //строка катаканы
         $k_str = str_replace("・", "、", $k_str);
         $k_str = str_replace(" ", "", $k_str);
         // echo $k_str . "<br>";
@@ -148,14 +148,14 @@ foreach ($sheet_full as $i => $row) {
 
 /* запись в новый файл */
 
-// include_once "./xlsxwriter.class.php";
+include_once "./xlsxwriter.class.php";
 
-// if(file_exists("Kanji_N4_edit.xlsx")){
-//     unlink("Kanji_N4_edit.xlsx");
-// }
-// $writer = new XLSXWriter();
-// $writer->writeSheet($newSheet);
-// $writer->writeToFile('Kanji_N4_edit.xlsx');
+if(file_exists("Kanji_N4_edit.xlsx")){
+    unlink("Kanji_N4_edit.xlsx");
+}
+$writer = new XLSXWriter();
+$writer->writeSheet($newSheet);
+$writer->writeToFile('Kanji_N4_edit.xlsx');
 include 'table.php';
 // $cb = $_POST['CB'];
 // //var_dump($cb);
