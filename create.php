@@ -32,12 +32,15 @@
                 <!-- Название элемента input определяет имя в массиве $_FILES -->
 
                 <!-- <input type="checkbox" name = "CB">С переводом<br> -->
-
+                
+                <h2>Генератор таблиц JLPT</h2>
+                <a href="Kanji_N4.xlsx" download>Пример файла</a>
                 <h3>Загрузите файл .xlsx: </h3><input name="userfile" type="file" /><br>
                 <input name = "title" type="text" class="form-control" placeholder="Название таблицы"><br>
                 <input class="btn btn-primary" type="submit" value="Создать таблицу" />
             </form>
-            <p>Загрузиться страница с таблицей. Для создания pdf файла надо(в Google Chrome): Правая кнопка мыши→«Печать...» → «Сохранить как pdf».</p>
+            <p>Загрузиться страница с таблицей. Для создания pdf файла надо(в Google Chrome): Правая кнопка мыши→«Печать...» → «Сохранить как pdf».
+            <strong>Если таблица отображается неправильно нажмите ctrl+F5!</strong></p>
         </div>
 
         <div class="col-lg-5"></div>

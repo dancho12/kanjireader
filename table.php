@@ -18,14 +18,19 @@
 
         <?php
 
-require_once __DIR__ . '/simple-xlsx/simplexlsx.class.php';
 
-// Файл xlsx
-$xlsx = new SimpleXLSX(__DIR__ . '/Kanji_N4_edit.xlsx');
+if(isset($newSheet)){
+    $sheet = $newSheet;
+}else{
+    require_once __DIR__ . '/simple-xlsx/simplexlsx.class.php';
+    // Файл xlsx
+$xlsx = new SimpleXLSX(__DIR__ . '/GKanji_N4_edit.xlsx');
 //$xlsx = new SimpleXLSX($_FILES['userfile']['tmp_name']);
 
 // Первый лист
 $sheet = $xlsx->rows();
+}
+
 
 $full = count($sheet);
 $last_row = (intval($full / 12) * 12);
