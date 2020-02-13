@@ -166,7 +166,7 @@ $row_val = 0;
     <p style = "margin-top: 4mm;
 	width: 62mm;
     float: left;
-    font-size: 0.6em;">このテーブルはタニイルによって作られました。</p>
+    font-size: 0.6em;">このテーブルはダニイルによって作られました。</p>
     </div>
 
 </body>
