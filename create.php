@@ -34,6 +34,7 @@
                 <!-- <input type="checkbox" name = "CB">С переводом<br> -->
 
                 <h3>Загрузите файл .xlsx: </h3><input name="userfile" type="file" /><br>
+                <input name = "title" type="text" class="form-control" placeholder="Название таблицы"><br>
                 <input class="btn btn-primary" type="submit" value="Создать таблицу" />
             </form>
             <p>Загрузиться страница с таблицей. Для создания pdf файла надо(в Google Chrome): Правая кнопка мыши→«Печать...» → «Сохранить как pdf».</p>

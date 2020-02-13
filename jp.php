@@ -68,9 +68,9 @@ foreach ($sheet_full as $i => $row) {
         $ii = 0;
         while ($ii <= $h_str_l2) {
             if (is_Hiragana($h_str, $ii,$sheet_k) && !is_Hiragana($h_str, $ii + 3,$sheet_k) && $h_str[$ii + 3] != "%" && substr($h_str, $ii + 3, 3) != "・") {
-                if(strpos($h_str,"%")){
+                if(strpos($h_str,"%")&&strpos($h_str,"%")<$ii+3){
                     $h_str = substr_replace($h_str, "&", $ii + 3, 0);
-                
+                    // echo "1<br>";
                     $h_str_l2++;
                 }
                 
@@ -80,15 +80,23 @@ foreach ($sheet_full as $i => $row) {
         }
 
         $dot_sy = "s";
+        if(strripos($h_str, "・")!==false){
+            $dot_sy = strripos($h_str, "・");
+        }
         $per_sy = "s";
-        $dot_sy = strripos($h_str, "・");
-        $per_sy = strripos($h_str, "%");
+        if(strripos($h_str, "%")){
+            $per_sy = strripos($h_str, "%");
+        }
+        // $dot_sy = strripos($h_str, "・");
+        // $per_sy = strripos($h_str, "%");
         if ($dot_sy != "s" && $per_sy != "s") {
             if ($dot_sy < $per_sy) {
                 $h_str = substr_replace($h_str, "&", strlen($h_str) + 1, 0);
+                // echo "2<br>";
             }
         } elseif ($per_sy != "s") {
             $h_str = substr_replace($h_str, "&", $j + 1, 0);
+            // echo "3<br>";
             
         }
         /*Конец*/
@@ -125,6 +133,9 @@ foreach ($sheet_full as $i => $row) {
 
 include_once "./xlsxwriter.class.php";
 
+if(file_exists("Kanji_N4_edit.xlsx")){
+    unlink("Kanji_N4_edit.xlsx");
+}
 $writer = new XLSXWriter();
 $writer->writeSheet($newSheet);
 $writer->writeToFile('Kanji_N4_edit.xlsx');
